@@ -1,5 +1,6 @@
 package step2_01.array1;
 
+import java.util.Iterator;
 import java.util.Random;
 
 /*
@@ -39,12 +40,31 @@ public class ArrayEx11_풀이 {
 		int[] arr   = new int[5];
 		int a = 0;
 		while(a<5) {
+			int rNum = ran.nextInt(5);
 			for (int i = 0; i < arr.length; i++) {
-			
+				if(isFirst[rNum] == false) {
+					isFirst[rNum] = true;
+					arr[a] = rNum;
+					a++;
+				}
+				
+				else {
+					continue;
+				}
 			}
 			
 			
 			
+			
+		}
+		
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+			
+		}
+		
+		for (int i = 0; i < isFirst.length; i++) {
+			System.out.print(isFirst[i] + " ");
 		}
 					
 	}
