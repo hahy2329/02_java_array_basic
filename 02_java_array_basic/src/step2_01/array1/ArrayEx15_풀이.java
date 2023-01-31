@@ -87,7 +87,12 @@ public class ArrayEx15_풀이 {
 				}
 			}
 			
-			if(count ==)
+			if(count ==9) {
+				System.out.println("해당 요소가 모두 채워졌습니다.");
+				isRun = false;
+			}
+			
+	
 			
 			
 			
