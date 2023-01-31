@@ -70,24 +70,16 @@ public class ArrayEx15_풀이 {
 			if(front[userNum] == front[userNum2]) {
 				back[userNum] = front[userNum];
 				back[userNum2] = front[userNum2];
+				count++;
 			}
 			
 			else {
 				System.out.println("서로 요소의 값이 같지 않습니다.");
 			}
 			
-			for (int i = 0; i < back.length; i++) { //0~9개까지 있음
-				if(back[i] !=0) {  
-					count++;
-					
-				}
-				
-				else {
-					continue;
-				}
-			}
 			
-			if(count ==9) {
+			
+			if(count ==5) {
 				System.out.println("해당 요소가 모두 채워졌습니다.");
 				isRun = false;
 			}
