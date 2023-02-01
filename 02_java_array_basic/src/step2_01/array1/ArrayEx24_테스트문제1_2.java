@@ -99,12 +99,32 @@ public class ArrayEx24_테스트문제1_2 {
 		// 문제 11) 숫자를 하나 입력받고 아래 배열을 뒤로 하나씩 밀어낸후 맨 앞에 저장 
 		int[] i = { 10,20,30,40,50 };
 		// 예) 60 ==> {60,10,20,30,40};
-		int temp;
 		/*
-		System.out.print("값을 입력해주세요: ");
-		int userNum20 = scan.nextInt();
+		System.out.println("값을 입력하세요: ");
+		int  userNum6 = scan.nextInt();
 		System.out.println();
+		for (int j = 4; j >=0; j--) {
+			if(j==0) {
+				i[j] = userNum6;
+			}
+			
+			else {
+				i[j] = i[j-1];
+			}
+		
+			
+			
+			
+			
+		}
+		
+		for (int j = 0; j < i.length; j++) {
+			System.out.println(i[j] + " ");
+		}
+		
 		*/
+		
+		
 		
 		
 		
