@@ -31,112 +31,127 @@ import java.util.Scanner;
  *
  */
 
-public class ArrayEx18_모방2 {
+public class ArrayEx18_마지막 {
 
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
 		Random ran = new Random();
+		
+		
 		int[] game = {1, 2, 3, 4, 5, 6, 7, 8};
 		int[] p1   = {0, 0, 0, 0, 0, 0, 0, 0};
 		int[] p2   = {0, 0, 0, 0, 0, 0, 0, 0};
 		
-		int turn = 0; // 한 바퀴 돌때마다 +가 된다.
+		int turn = 0;
 		
-		int idx1 = 0;	//초기값으로 인덱스 요소를 0으로 지정
-		int idx2 = 0;   //초기값으로 인덱스 요소를 0으로 지정 
+		int idx1 = 0;	
+		int idx2 = 0;
 		
-		p1[idx1] = 1;	//p1은 1로 시작
-		p2[idx2] = 2;   //p2는 2로 시작
+		p1[idx1] = 1;	
+		p2[idx2] = 2;
 		
-		int win1 = 0;	//p1이 이김
-		int win2 = 0;	//p2가 이김 
+		int win1 = 0;	
+		int win2 = 0;
 		
-		
-		boolean isRun = true; // true인 동안 게임은 계속 진행 될 것임.
+		boolean isRun = true;
 		
 		while(isRun) {
+			
+			//게임시작(현재 p1과 p2의 상태)
 			for (int i = 0; i < game.length; i++) {
-				System.out.print(game[i] + " ");
+				System.out.print(game[i]+" ");
 			}
 			System.out.println();
 			
 			for (int i = 0; i < p1.length; i++) {
 				System.out.print(p1[i] + " ");
+				
 			}
+			
 			System.out.println(win1+"바퀴");
 			System.out.println();
 			
+			
 			for (int i = 0; i < p2.length; i++) {
-				System.out.print(p2[i]+" ");
+				System.out.print(p2[i]+ " ");
 			}
-			System.out.println(win2 + "바퀴");
+			System.out.println(win2+"바퀴");
 			System.out.println();
 			
+			//p1과 p2의 차례일때 진행과정
 			
-			if(turn%2==0) {
-				System.out.print("p1이 이동할 만큼 값을 입력해주세요:(1~3) ");
+			if(turn %2==0) {
+				System.out.print("p1의 이동할 위치만큼 입력해주세요:(1~3) ");
 				int move = scan.nextInt();
 				System.out.println();
 				
-				p1[idx1] =0;
-				idx1 = idx1+ move;
+				p1[idx1] = 0;
+				idx1 = idx1 + move;
 				
-				if(idx1 >=8) {
+				if(idx1>=8) {
 					win1++;
 				}
 				
-				idx1 = idx1 %8;
+				idx1 = idx1 % 8;
 				p1[idx1] = 1;
+				
 			}
 			
 			else if(turn %2 ==1) {
-				System.out.println("p2가 이동할 만큼의 거리를 랜덤으로 지정하겠습니다.");
+				System.out.print("p2의 이동할 위치를 랜덤으로 지정하겠습니다.(1~3) ");
 				int move = ran.nextInt(3)+1;
-				System.out.println();
-				
 				
 				p2[idx2] = 0;
-				idx2 = idx2+move;
+				idx2 = idx2 + move;
 				
 				if(idx2 >=8) {
 					win2++;
 				}
 				
-				idx2= idx2 %8;
+				idx2 = idx2 % 8;
 				p2[idx2] = 2;
+				
+				
 			}
 			
-			if(idx1 == idx2 &&idx1 !=0 & turn%2==0 ) {
-				System.out.println("p1사용자가 p2를 잡았습니다.");
+			
+			//p1 -> p2를 잡거나, p2 -> p1을 잡았을 경우
+			if(idx1 == idx2 && idx1!=0 && turn %2 ==0) {
 				p2[idx2] = 0;
 				idx2 = 0;
 				p2[idx2] = 2;
+				
 			}
 			
-			else if(idx2 == idx1 && idx2 != 0 && turn%2 ==1) {
-				System.out.println("p2가 p1사용자를 잡았습니다.");
+			else if(idx2 == idx1 && idx2!=0 && turn %2 ==1) {
 				p1[idx1] = 0;
 				idx1 = 0;
-				p1[idx1]=1;
+				p2[idx1] = 1;
+				
 			}
 			
-			turn+=1;
-			
+			// 마지막으로 누가 이겼는지 검사하기
 			if(win1 == 3) {
-				System.err.println("p1사용자의 승리");
+				System.out.println("p1 승리");
 				break;
 			}
 			
 			else if(win2 == 3) {
-				System.out.println("p2사용자의 승리");
+				System.out.println("p2 승리");
 				break;
 			}
 			
+			//다시 while문 초반부로 가기 전 turn +=1을 해주면서 차례 바꿔주기
+			turn+=1;
 			
 			
-		
+			
 		}
+		System.out.println("게임 끝!");
+		
+		
+		
 		
 		
 	}
