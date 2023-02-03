@@ -31,7 +31,7 @@ import java.util.Scanner;
  *
  */
 
-public class ArrayEx18_풀이 {
+public class ArrayEx18_모방 {
 
 	public static void main(String[] args) {
 		
