@@ -42,11 +42,11 @@ public class ArrayEx17_풀이 {
 		
 			
 			for (int i = 0; i < game.length; i++) {
-				if (game[i] == 0) 		 System.out.print("[ ]");
-				else if (game[i] == 1)   System.out.print("[O]");
-				else if (game[i] == 2)   System.out.print("[X]");
+				if (game[i] == 0) { 		 System.out.print(" [ ] ");}
+				else if (game[i] == 1) {   System.out.print(" [O] ");}
+				else if (game[i] == 2) {  System.out.print(" [X] "); }
 				
-				if (game[i] % 3 == 2) {
+				if (i % 3 == 2) {
 					System.out.println();
 				}
 			}
@@ -54,11 +54,11 @@ public class ArrayEx17_풀이 {
 				
 				if (win == 1) {
 					System.out.println("[p1]승리");
-					break;
+					isRun = false;
 				} 
 				else if ( win == 2 ) {
 					System.out.println("[p2]승리");
-					break;				
+					isRun = false;				
 				} 
 				
 				if (turn % 2 == 0) {
