@@ -55,6 +55,7 @@ public class ArrayEx01 {
 		arr[3] = 40;
 		arr[4] = 50;
 		
+		
 		// arr[5] = 60;
 		// java.lang.ArrayIndexOutOfBoundsException
 		// 배열의 최대범위를 넘어갈 때 발생하는 오류
@@ -64,6 +65,7 @@ public class ArrayEx01 {
 		System.out.println(arr[2]);
 		System.out.println(arr[3]);
 		System.out.println(arr[4]);
+	
 		System.out.println();
 		
 		
